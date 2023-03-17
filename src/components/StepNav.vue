@@ -1,13 +1,13 @@
 <template>
   <div class="siedbar">
     <nav class="nav">
-      <div v-for="(step, index) in steps" :key="index" class="nav__step" :class="{ 'active' : index === activeStep }">
+      <div v-for="step in stepsNav" :key="step.id" class="nav__step" :class="{ 'active' : step.id === activeStep }">
         <div class="nav__number">
-          {{ index+1 }}
+          {{ step.id }}
         </div>
         <div class="nav__desc">
-          <span>Step {{ index+1 }}</span>
-          <h4>{{ step }}</h4>
+          <span>Step {{ step.id }}</span>
+          <h4>{{ step.title }}</h4>
         </div>
       </div>
     </nav>
@@ -15,27 +15,11 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex';
   export default {
     name: "StepNav",
-    data() {
-      return {
-        steps: ["Your info", "Select plan", "Add-ons", "summary"]
-      }
-    },
-    props: {
-      activeStep: String
-    },
-    watch: { // It listens to the change in prop name
-      activeStep: function () {
-        console.log("name change"); // print out when the name changes
-      },
-    },
-    components: {},
     computed: {
-
-    },
-    setup(props) {
-      console.log(props.activeStep)
+      ...mapGetters(['stepsNav', 'activeStep'])
     }
   }
 </script>
