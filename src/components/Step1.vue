@@ -1,6 +1,6 @@
 <template>
     <article class="step">
-        <header>
+        <header class="step__header">
             <h2>Personal info</h2>
             <p>Please provide your name, email address, and phone number.</p>
         </header>
@@ -105,13 +105,6 @@
 <style scoped lang="scss">
     @import "../assets/styles/_variables.scss";
 
-    .step {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-top: 39px;
-    }
-
     .error-text {
         margin-left: auto;
         color: $strawberry-red;
@@ -134,19 +127,7 @@
     }
 
     header {
-        margin-bottom: 40px;
 
-        h2 {
-            color: $marine-blue;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        p {
-            color: $color-gray;
-            font-size: 17px;
-            letter-spacing: -0.03em;
-        }
     }
 
     .form {

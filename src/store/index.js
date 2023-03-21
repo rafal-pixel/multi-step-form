@@ -20,11 +20,40 @@ const store = createStore({
                 title: 'Summary'
             }
         ],
-        activeStep: 1,
+        activeStep: 2,
         personalInfo: {
             name: '',
             email: '',
             phone: '',
+        },
+        plan: {
+            choice: 0, 
+            items: [
+                {
+                    'img': '../images/icon-arcade.svg',
+                    'title': 'Arcade',
+                    'month': 9,
+                    'year': 90,
+                    'promotionYear': '2 months free',
+                    'choice': 0
+                },
+                {
+                    'img': '../images/icon-advanced.svg',
+                    'title': 'Advanced',
+                    'month': 12,
+                    'year': 120,
+                    'promotionYear': '2 months free',
+                    'choice': 0
+                },
+                {
+                    'img': '../images/icon-pro.svg',
+                    'title': 'Pro',
+                    'month': 15,
+                    'year': 150,
+                    'promotionYear': '2 months free',
+                    'choice': 0
+                },
+            ]
         }
     },
     getters: {
@@ -36,6 +65,9 @@ const store = createStore({
         },
         personalInfo (state) {
             return state.personalInfo
+        },
+        planInfo (state) {
+            return state.plan
         }
     },
     mutations: {
@@ -51,6 +83,16 @@ const store = createStore({
         },
         setPersonalInfo (state, payload) {
             state.personalInfo = payload
+        },
+        setPlan (state, payload) {
+            state.plan.choice = payload.choice;
+            state.plan.items.forEach((el, index) => {
+                if(payload.choicePlan==el.title) {
+                    el.choice = 1;
+                } else {
+                    el.choice = 0;
+                }
+            })
         }
     }
 })

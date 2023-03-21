@@ -57,4 +57,15 @@ export default {
     background-color: hsl(214, 72%, 32%);
   }
 }
+.btn-back {
+  outline: 0;
+  border: 0;
+  display: inline-flex;
+  background-color: transparent;
+  color: $color-gray;
+  font-size: 16px;
+  font-weight: $medium;
+  font-family: $font-family;
+  cursor: pointer;
+}
 </style>
