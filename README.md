@@ -11,12 +11,6 @@ Link to the task:
 
 Users should be able to: 
 
-- Your challenge is to build out this profile card component and get it looking as close to the design as possible.
-
-- You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-### Screenshot
-
 - Complete each step of the sequence
 - Go back to a previous step to update their selections
 - See a summary of their selections on the final step and confirm their order
@@ -26,6 +20,10 @@ Users should be able to:
   -- A field has been missed
   -- The email address is not formatted correctly
   -- A step is submitted, but no selection has been made
+
+### Screenshot
+
+![image](https://user-images.githubusercontent.com/126875579/229830069-b7c5f47c-6e58-49b0-9af3-14c5e905f369.png)
 
 ### Links
 
