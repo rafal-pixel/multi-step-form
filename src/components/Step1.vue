@@ -1,25 +1,27 @@
 <template>
     <article class="step">
-        <header class="step__header">
-            <h2>Personal info</h2>
-            <p>Please provide your name, email address, and phone number.</p>
-        </header>
-        <div class="form">
-            <label ref="name">
-                <span>Name</span>
-                <span class="error-text">This field is required or not in the correct format</span>
-                <input type="text" placeholder="e.g. Stephen King" v-model="name" @input="nameFofus">
-            </label>
-            <label ref="email">
-                <span>Email Address</span>
-                <span class="error-text">This field is required or not in the correct format</span>
-                <input type="text" placeholder="e.g. stephanking@lorem.com" v-model="email" @input="emailFofus">
-            </label>
-            <label ref="phone">
-                <span>Phone Number</span>
-                <span class="error-text">This field is required or not in the correct format</span>
-                <input type="text" placeholder="e.g. +1 234 567 890" v-model="phone" @input="phoneFofus">
-            </label>
+        <div class="step__mobile">
+            <header class="step__header">
+                <h2>Personal info</h2>
+                <p>Please provide your name, email address, and phone number.</p>
+            </header>
+            <div class="form">
+                <label ref="name">
+                    <span>Name</span>
+                    <span class="error-text">This field is required or not in the correct format</span>
+                    <input type="text" placeholder="e.g. Stephen King" v-model="name" @input="nameFofus">
+                </label>
+                <label ref="email">
+                    <span>Email Address</span>
+                    <span class="error-text">This field is required or not in the correct format</span>
+                    <input type="text" placeholder="e.g. stephanking@lorem.com" v-model="email" @input="emailFofus">
+                </label>
+                <label ref="phone">
+                    <span>Phone Number</span>
+                    <span class="error-text">This field is required or not in the correct format</span>
+                    <input type="text" placeholder="e.g. +1 234 567 890" v-model="phone" @input="phoneFofus">
+                </label>
+            </div>
         </div>
         <footer>
             <button class="btn" @click="nextStep">Next Step</button>
@@ -185,5 +187,27 @@
 
     button {
         margin-left: auto;
+    }
+
+    @media(max-width: 991px) {
+        .error-text {
+            font-size: 10px;
+            height: 0;
+            overflow: hidden;
+        }
+        label {
+            font-size: 12px;
+            margin-bottom: 13px;
+            input {
+                height: 40px;
+                margin-top: 6px;
+                font-size: 16px;
+            }
+        }
+        .error {
+            .error-text {
+                height: auto;
+            }
+        }
     }
 </style>

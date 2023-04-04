@@ -1,31 +1,35 @@
 <template>
   <article class="step">
-    <header class="step__header">
-      <h2>Select your plan</h2>
-      <p>You have the option of monthly or yearly billing.</p>
-    </header>
-    <div class="form">
-      <div class="radios">
-        <label class="custom-radio" v-for="(item, index) in planInfo.items" :key="index"
-          :class="{ 'active' : item.title===plan}">
-          <input type="radio" :value="item.title" v-model="plan">
-          <img src="../assets/images/icon-arcade.svg" alt="" width="40" height="40">
-          <span class="title">{{ item.title }}</span>
-          <div v-if="planInfo.choice==0">
-            <span class="price">${{ item.month }}/mo</span>
-          </div>
-          <div v-if="planInfo.choice==1">
-            <span class="price">${{ item.year }}/yr</span> <br>
-            <span class="info">{{ item.promotionYear }}</span>
-          </div>
+    <div class="step__mobile">
+      <header class="step__header">
+        <h2>Select your plan</h2>
+        <p>You have the option of monthly or yearly billing.</p>
+      </header>
+      <div class="form">
+        <div class="radios">
+          <label class="custom-radio" v-for="(item, index) in planInfo.items" :key="index"
+            :class="{ 'active' : item.title===plan}">
+            <input type="radio" :value="item.title" v-model="plan">
+            <img src="../assets/images/icon-arcade.svg" alt="" width="40" height="40">
+            <div>
+              <span class="title">{{ item.title }}</span>
+              <div v-if="planInfo.choice==0">
+                <span class="price">${{ item.month }}/mo</span>
+              </div>
+              <div v-if="planInfo.choice==1">
+                <span class="price">${{ item.year }}/yr</span> <br>
+                <span class="info">{{ item.promotionYear }}</span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <label class="switch-price">
+          <span :class="{ 'active' : planInfo.choice==0}">Monthly</span>
+          <input type="checkbox" true-value="1" false-value="0" v-model="planInfo.choice">
+          <span class="slider"></span>
+          <span :class="{ 'active' : planInfo.choice==1}">Yearly</span>
         </label>
       </div>
-      <label class="switch-price">
-        <span :class="{ 'active' : planInfo.choice==0}">Monthly</span>
-        <input type="checkbox" true-value="1" false-value="0" v-model="planInfo.choice">
-        <span class="slider"></span>
-        <span :class="{ 'active' : planInfo.choice==1}">Yearly</span>
-      </label>
     </div>
     <footer>
       <button class="btn-back" @click="prevStep">Go Back</button>
@@ -48,9 +52,12 @@
     methods: {
       nextStep() {
         if (this.plan !== '') {
-          this.$store.commit('setPlan', {choice: this.planInfo.choice, choicePlan: this.plan})
+          this.$store.commit('setPlan', {
+            choice: this.planInfo.choice,
+            choicePlan: this.plan
+          })
           this.$store.commit('activeStepPlus');
-        } 
+        }
       },
       prevStep() {
         this.$store.commit('activeStepMinus');
@@ -178,4 +185,26 @@
     }
   }
 
+  @media(max-width: 991px) {
+    .radios {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 23px;
+    }
+
+    .custom-radio {
+      min-height: 79px;
+      width: 100%;
+      flex-direction: row;
+      padding: 15px 10px;
+
+      img {
+        margin-bottom: 0;
+        margin-right: 15px;
+      }
+    }
+    .step__mobile {
+      padding-bottom: 30px;
+    }
+  }
 </style>

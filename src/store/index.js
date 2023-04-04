@@ -20,7 +20,7 @@ const store = createStore({
                 title: 'Summary'
             }
         ],
-        activeStep: 2,
+        activeStep: 1,
         personalInfo: {
             name: '',
             email: '',
@@ -35,7 +35,7 @@ const store = createStore({
                     'month': 9,
                     'year': 90,
                     'promotionYear': '2 months free',
-                    'choice': 0
+                    'choice': 1
                 },
                 {
                     'img': '../images/icon-advanced.svg',
@@ -54,7 +54,30 @@ const store = createStore({
                     'choice': 0
                 },
             ]
-        }
+        },
+        accessories: [
+            {
+                'mainText': 'Online service',
+                'subText': 'Access to multiplayer games',
+                'month': 1,
+                'year': 10,
+                'choice': 0
+            },
+            {
+                'mainText': 'Larger storage',
+                'subText': 'Extra 1TB of cloud save',
+                'month': 2,
+                'year': 20,
+                'choice': 0
+            },
+            {
+                'mainText': 'Customizable profile',
+                'subText': 'Custom theme on your profile',
+                'month': 2,
+                'year': 20,
+                'choice': 0
+            },
+        ]
     },
     getters: {
         stepsNav (state) {
@@ -68,11 +91,14 @@ const store = createStore({
         },
         planInfo (state) {
             return state.plan
+        },
+        accessoriesInfo (state) {
+            return state.accessories
         }
     },
     mutations: {
         activeStepPlus(state) {
-            if(state.activeStep < 4) {
+            if(state.activeStep < 5) {
                 state.activeStep ++;
             }
         },
@@ -93,6 +119,9 @@ const store = createStore({
                     el.choice = 0;
                 }
             })
+        },
+        setStep (state) {
+            state.activeStep = 2
         }
     }
 })

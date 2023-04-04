@@ -25,12 +25,11 @@ export default {
 #app {
   height: 100vh;
   display: flex;
-  // align-items: center;
+  align-items: center;
   justify-content: center;
   background-color: $Magnolia;
   font-family: $font-family;
   font-size: 16px;
-  padding-top: 105px;
 }
 
 .btn {
@@ -67,5 +66,20 @@ export default {
   font-weight: $medium;
   font-family: $font-family;
   cursor: pointer;
+}
+@media(max-width: 991px) {
+  #app {
+    align-items: flex-start;
+  }
+  .btn {
+    height: 40px;
+    min-width: 95px;
+    font-size: 14px;
+    padding: 0 5px;
+    border-radius: 4px;
+  }
+  .btn-back {
+    font-size: 15px;
+   }
 }
 </style>
