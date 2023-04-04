@@ -131,11 +131,6 @@
     header {
 
     }
-
-    .form {
-        // display: ;
-    }
-
     label {
         width: 100%;
         display: flex;
