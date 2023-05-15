@@ -10,7 +10,7 @@
           <label class="custom-radio" v-for="(item, index) in planInfo.items" :key="index"
             :class="{ 'active' : item.title===plan}">
             <input type="radio" :value="item.title" v-model="plan">
-            <img src="../assets/images/icon-arcade.svg" alt="" width="40" height="40">
+            
             <div>
               <span class="title">{{ item.title }}</span>
               <div v-if="planInfo.choice==0">
