@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://www.frontendmentor.io/solutions/profile-card-component-using-tailwindcss-DqQ0hnlcll)
-- Live Site URL: [live](https://robotamozepoczekac.github.io/multi-step-deploy/)
+- Live Site URL: [live](https://rafal-pixel.github.io/multi-step-deploy/)
 
 ### Built With
 
@@ -51,10 +51,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
