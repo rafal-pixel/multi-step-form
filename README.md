@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://www.frontendmentor.io/solutions/profile-card-component-using-tailwindcss-DqQ0hnlcll)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/multistep-forms-created-with-vue-and-vuex-yoqCdszlKi)
 - Live Site URL: [live](https://rafal-pixel.github.io/multi-step-deploy/)
 
 ### Built With
